@@ -13,23 +13,23 @@ docker run -dt --name pyspark_postgres -v pspg_ps_data:/ps_data -v pspg_db_data:
 # Postgres Credentials
 
 hostname: localhost  
-</br>port: 1900  
-</br>user: postgres  
-</br>password: 
+port: 1900  
+user: postgres  
+password: 
 
 # SSH Credentials
 
 hostname: localhost  
-</br>port: 1901  
-</br>user: root  
-</br>password: pyspark_postgres 
+port: 1901  
+user: root  
+password: pyspark_postgres 
 
 # Volume `pspg_ps_data`
 
 /ps_data : main shared folder  
-</br>/ps_data/job : folder for PySpark scripts  
-</br>/ps_data/output : folder for output files  
-</br>/ps_data/input : folder for input files
+/ps_data/job : folder for PySpark scripts  
+/ps_data/output : folder for output files  
+/ps_data/input : folder for input files
 
 # Volume `pspg_db_data`
 
