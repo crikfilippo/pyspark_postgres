@@ -1,64 +1,36 @@
-# pyspark_postgres
-docker image with python,pyspark,postgres,ssh
+# Description
 
+docker image with python, pyspark, postgres, ssh 
 
-#####################
-
-#comandi realizzazione
-
-#####################
-
-#build image
+# Build image
 
 docker build --no-cache -t pyspark_postgres .
 
-#run container
+# Run container
 
 docker run -dt --name pyspark_postgres -v pspg_ps_data:/ps_data -v pspg_db_data:/var/lib/postgresql/data -p 1900:5432 -p 1901:22 pyspark_postgres
 
-#####################
+# Postgres Credentials
 
-#credenziali
+hostname: localhost  
+</br>port: 1900  
+</br>user: postgres  
+</br>password: 
 
-#####################
+# SSH Credentials
 
-#postgres
+hostname: localhost  
+</br>port: 1901  
+</br>user: root  
+</br>password: pyspark_postgres 
 
-hostname: localhost
-porta: 1900
-user: postgres
-password: 
+# Volume `pspg_ps_data`
 
-#ssh
+/ps_data : main shared folder  
+</br>/ps_data/job : folder for PySpark scripts  
+</br>/ps_data/output : folder for output files  
+</br>/ps_data/input : folder for input files
 
-hostname: localhost
+# Volume `pspg_db_data`
 
-porta: 1901
-
-user: root
-
-password: pyspark_postgres 
-
-
-#####################
-
-#volume pspg_ps_data
-
-#####################
-
-/ps_data : cartella condivisa principale
-
-/ps_data/job : cartella degli script pyspark
-
-/ps_data/output : cartella dei file in output
-
-/ps_data/input : cartella dei file in input
-
-
-#####################
-
-#volume pspg_db_data
-
-#####################
-
-file di postgres
+Postgres data files
